@@ -2,16 +2,21 @@
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
     --accent-color: #e74c3c;
+    --bg-color: #0a0a0a;
+    --text-color: #e0e0e0;
+    --glass-bg: rgba(255, 255, 255, 0.05);
 }
 
 body {
     margin: 0;
     font-family: 'Segoe UI', system-ui;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: var(--bg-color);
+    color: var(--text-color);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
 }
 
 .welcome-container {
@@ -107,4 +112,114 @@ body {
     .title {
         font-size: 2rem;
     }
+}
+
+/* 自定义光标效果 */
+.cursor-trail {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    z-index: 9999;
+}
+
+.glass-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    position: relative;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.hero-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.glitch-text {
+    font-size: 4rem;
+    position: relative;
+    animation: glitch 2s infinite linear;
+}
+
+@keyframes glitch {
+    2% { text-shadow: 2px 0 var(--accent-color); }
+    4% { text-shadow: -2px 0 #ff00c1; }
+    96% { text-shadow: none; }
+}
+
+.iframe-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+.content-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.loading-state {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--glass-bg);
+    border-top-color: var(--accent-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
 } 

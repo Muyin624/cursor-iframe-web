@@ -1,28 +1,40 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>欢迎来到我的项目</title>
+    <title>交互式项目首页</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="welcome-container">
-        <div class="animated-logo">🚀</div>
-        <h1 class="title">欢迎来到我的项目</h1>
-        <div class="content-box">
-            <p class="description">这是一个充满创造力的开发项目</p>
-            <div class="features">
-                <div class="feature-item">✔️ 现代化技术栈</div>
-                <div class="feature-item">✔️ 响应式设计</div>
-                <div class="feature-item">✔️ 持续更新</div>
-            </div>
-            <div class="button-group">
-                <a href="#docs" class="cta-button">查看文档</a>
-                <a href="#demo" class="cta-button secondary">体验演示</a>
-            </div>
+    <div class="cursor-trail"></div>
+    
+    <nav class="glass-nav">
+        <div class="nav-logo">🚀 DM</div>
+        <div class="nav-links">
+            <a href="#home" class="nav-link active">首页</a>
+            <a href="#projects" class="nav-link">项目</a>
+            <a href="#about" class="nav-link">关于</a>
+            <a href="#contact" class="nav-link">联系</a>
         </div>
-    </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero-section">
+            <div class="matrix-background"></div>
+            <h1 class="glitch-text" data-text="创意开发空间">创意开发空间</h1>
+            <p class="typewriter-text">探索无限可能...</p>
+        </section>
+
+        <div class="iframe-container">
+            <div class="loading-state">
+                <div class="loading-spinner"></div>
+                <p>内容加载中...</p>
+            </div>
+            <!-- 实际使用需要替换为真实iframe地址 -->
+            <iframe src="content.html" class="content-frame"></iframe>
+        </div>
+    </main>
 
     <script src="script.js"></script>
 </body>
