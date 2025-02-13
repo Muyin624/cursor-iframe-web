@@ -2,24 +2,75 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
     <title>欢迎来到我的项目</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="welcome-container">
-        <div class="animated-logo">🚀</div>
-        <h1 class="title">欢迎来到我的项目</h1>
-        <div class="content-box">
-            <p class="description">这是一个充满创造力的开发项目</p>
-            <div class="features">
-                <div class="feature-item">✔️ 现代化技术栈</div>
-                <div class="feature-item">✔️ 响应式设计</div>
-                <div class="feature-item">✔️ 持续更新</div>
+    <!-- 新增导航栏 -->
+    <nav class="main-nav">
+        <div class="nav-left">
+            <a href="#home" class="nav-link active">首页</a>
+            <a href="#docs" class="nav-link">文档</a>
+            <a href="#demo" class="nav-link">演示</a>
+            <a href="#about" class="nav-link">关于</a>
+        </div>
+    </nav>
+    <button id="theme-toggle" class="theme-btn">🌞</button>
+
+    <!-- 修改为页面容器 -->
+    <div class="page-container">
+        <!-- 原有内容作为首页 -->
+        <div class="page active" id="home">
+            <div class="tv-frame">
+                <div class="tv-screen">
+                    <div class="scanlines"></div>
+                    <div class="welcome-container">
+                        <div class="animated-logo">📺</div>
+                        <h1 class="title">欢迎来到我的项目</h1>
+                        <div class="content-box">
+                            <p class="description">这是一个充满创造力的开发项目</p>
+                            <div class="features">
+                                <div class="feature-item">✔️ 现代化技术栈</div>
+                                <div class="feature-item">✔️ 响应式设计</div>
+                                <div class="feature-item">✔️ 持续更新</div>
+                            </div>
+                            <div class="button-group">
+                                <a href="#docs" class="cta-button">查看文档</a>
+                                <a href="#demo" class="cta-button secondary">体验演示</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tv-controls">
+                    <div class="tv-knob"></div>
+                    <div class="tv-knob"></div>
+                </div>
+                <div class="tv-stand"></div>
             </div>
-            <div class="button-group">
-                <a href="#docs" class="cta-button">查看文档</a>
-                <a href="#demo" class="cta-button secondary">体验演示</a>
+        </div>
+
+        <!-- 新增文档页面 -->
+        <div class="page" id="docs">
+            <div class="content-box">
+                <h2>项目文档</h2>
+                <p>这里是项目文档内容...</p>
+            </div>
+        </div>
+
+        <!-- 新增演示页面 -->
+        <div class="page" id="demo">
+            <div class="content-box">
+                <h2>在线演示</h2>
+                <p>演示内容即将上线...</p>
+            </div>
+        </div>
+
+        <!-- 新增关于页面 -->
+        <div class="page" id="about">
+            <div class="content-box">
+                <h2>关于项目</h2>
+                <p>© <span id="current-year"></span> 版权所有</p>
             </div>
         </div>
     </div>
